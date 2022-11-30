@@ -1,0 +1,98 @@
+TEST PLAN FOR LORD OF RINGS API
+INTRODUCTION
+
+Purpose
+This document describes the plan for testing the architectural prototype of the Lord of rings API. This Test Plan document supports the following objectives:
+o	Identify existing project information and the software that should be tested.
+o	List the recommended test requirements (high level).
+o	Recommend and describe the testing strategies to be employed.
+o	Identify the required resources and provide an estimate of the test efforts.
+o	List the deliverable elements of the test activities.
+
+Scope
+This Test Plan describes the integration and system tests that will be conducted on the architectural prototype following integration of the subsystems and components identified in the Integration Build Plan for the Prototype.
+It is assumed that unit testing already provided thorough black box testing, extensive coverage of source code, and testing of all module interfaces.
+The purpose of assembling the architectural prototype was to test feasibility and performance of the selected architecture. It is critical that all system and subsystem interfaces be tested as well as system performance at this early stage. Testing of system functionality and features will not be conducted on the prototype.
+Requirements for Test 
+The listing below identifies those items (use cases, functional requirements, and non-functional requirements) that have been identified as targets for testing. This list represents what will be tested.
+
+Function Testing
+The system should be able to list of all The Lord of the Rings books
+The system should be able to request one specific book 
+The system should be able to request all chapters of one specific book
+The system should be able to list all movies, including the "The Lord of the Rings" and the "The Hobbit" trilogies
+The system should be able to request one specific movie
+The system should be able to request all movie quotes for one specific movie (only working for the LotR trilogy)
+The system should be able to list characters including metadata like name, gender, realm, race and more
+The system should be able to request one specific character
+The system should be able to request all movie quotes of one specific character
+The system should be able to list all movie quotes
+The system should be able to request one specific movie quote
+The system should be able to list all book chapters
+The system should be able to request one specific book chapter
+
+TEST STRATEGY
+Function Testing
+Testing of the application should focus on any target requirements that can be traced directly to use cases. The goals of these tests are to verify proper data acceptance, processing, and retrieval, and the appropriate implementation of the business rules. This type of testing is based upon black box techniques, that is, verifying the application (and its internal processes) by interacting with the application via the GUI and analyzing the output (results). Identified below is an outline of the testing recommended for each application:
+ 
+Test Objective:	Ensure proper application navigation, data entry, processing, and retrieval.
+Technique:	•	Execute each use case, use case flow, or function, using valid and invalid data, to verify the following:
+•	The expected results occur when valid data is used.
+•	The appropriate error / warning messages are displayed when invalid data is used.
+•	Each business rule is properly applied.
+Completion Criteria:	•	All planned tests have been executed.
+•	All identified defects have been addressed.
+Security and Access Control Testing
+Security and Access Control Testing focus on two key areas of security:
+- Application security, including access to the Data, and
+- Accessing data that requires access token
+Application security ensures that, based upon the desired security, users are restricted to specific functions or are limited in the data that is available to them. For example, when  a user tries to access data that requires access token needs to have an account with the API to unlock data.
+System security ensures that only those users granted access to the system are capable of accessing the applications and only through the appropriate gateways.
+ 
+Test Objective:	Function / Data Security: Verify that user can access only those functions / data for which their user type is provided permissions.
+System Security: Verify that only those users with access to the system and application(s) are permitted to access them.
+Technique:	•	Function / Data Security: Identify and list each user type and the functions / data each type has permissions for.
+•	Create tests for each user type and verify permission by creating http requests of the data.
+•	Modify user type and re-run tests for same users. In each case verify those additional functions / data are correctly available or denied.
+Completion Criteria:	For each known user type the appropriate function / data are available and all transactions function as expected and run in prior Application Function tests
+TOOLS
+API testing – Postman
+Sending http requests to all end points that are available from the deployed version of the API.
+Functional testing – Selenium web driver
+This includes writing code in JavaScript to make test automatic from a web browser.
+
+ROLES
+Name: N/A
+Role: Test manager
+Responsibilities: responsible for the testing of systems under development, for providing expert process improvement advice to reduce development defects and provide assurance that risks associated with implementing new systems are accurately quantified and addressed.
+
+Name: N/A
+Role: Backend testing, frontend testing
+Responsibilities: responsible for making test to the API before it could reach the Quality assurance engineers. The tests include functionality, smoke testing and unit testing etc. 
+
+Name: N/A
+Role: QA
+Responsibilities:
+•	Executes test cases under varying circumstances.
+•	Documents and evaluates test results.
+•	Detects, logs, and reports program bugs and glitches.
+•	Tracks defects and helps troubleshoot errors.
+•	Reviews test procedures and develops test scripts.
+•	Partners with engineers to drive QA efforts.
+
+Test Suite
+The Test Suite will define all the test cases and the test scripts which are associated with each test case.
+Project Tasks
+Below are the test related tasks for testing the Lord of rings API:
+Plan Test
+Identify Requirements for Test
+Assess Risk
+Develop Test Strategy
+Identify Test Resources
+Create Schedule
+Generate Test Plan
+Design Test
+
+Develop Test Suite
+Identify and Describe Test Cases
+Identify and Structure Test Scripts
